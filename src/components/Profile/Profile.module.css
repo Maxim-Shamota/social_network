@@ -2,9 +2,6 @@
     grid-area: c;
     background:rgb(73, 124, 243);
 }
-.content img {
+.content>img {
     width: 100%;
-}
-.item {
-    color: rgb(17, 247, 228);
 }
