@@ -2,6 +2,6 @@
     grid-area: c;
     background:rgb(73, 124, 243);
 }
-.content>img {
-    width: 100%;
+.content img {
+    max-width: 100%;
 }
