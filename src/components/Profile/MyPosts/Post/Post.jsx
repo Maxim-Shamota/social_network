@@ -7,7 +7,7 @@ const Post = (props) => {
             <img src="https://img1.goodfon.ru/wallpaper/nbig/9/a2/rengo-multfilm-hameleon.jpg" alt="image"/>
             {props.message}
             <div>
-                <span>{props.like}</span>
+                <span>like {props.likeCount}</span>
             </div>
         </div>
     )
