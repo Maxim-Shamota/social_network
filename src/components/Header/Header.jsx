@@ -4,7 +4,7 @@ import s from './Header.module.css';
 const Header = () => {
     return (
         <header className={s.header}>
-            <img src="http://www.annelishundsim.se/wp-content/uploads/2017/04/webicon.png" alt="logo"/>
+            <img src="https://bumper-stickers.ru/62203-thickbox_default/enot.jpg" alt="logo"/>
         </header>
     )
 }

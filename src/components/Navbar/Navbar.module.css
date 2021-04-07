@@ -4,8 +4,16 @@
     padding: 20px;
 }
 .item {
+    font-size: 20px;
     color: #fff;
 }
 .activeLink {
     color:goldenrod;
+}
+.friends {
+
+}
+.friendsElements {
+    display: flex;
+    justify-content: space-between;
 }

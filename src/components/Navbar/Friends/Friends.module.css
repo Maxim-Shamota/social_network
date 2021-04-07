@@ -1,0 +1,18 @@
+.friends {
+    margin-top: 30px;
+}
+.bestFriends {
+
+}
+.bestFriend {
+    text-align: center;
+    width: 33.3%;
+}
+.bestFriends img{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+.friendAvatar {
+    text-align: center;
+}

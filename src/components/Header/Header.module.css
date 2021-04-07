@@ -3,5 +3,6 @@
     background: rgb(47, 109, 255);
 }
 .header>img {
-    width: 20px;
+    width: 50px;
+    padding: 0 0 0 20px;
 }
