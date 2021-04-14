@@ -16,3 +16,7 @@
 .friendAvatar {
     text-align: center;
 }
+.friendsElements {
+    justify-content: space-between;
+    display: flex;
+}

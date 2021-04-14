@@ -1,16 +1,21 @@
 import React from 'react';
 import s from './Friends.module.css';
+import Friend from "./Friend";
 
 const Friends = (props) => {
 
+    let friendsElements = props.friends.map(f => <Friend name={f.name} key={f.id}/>)
+
     return (
-        <div className={s.bestFriends}>
-            <div className={s.friendAvatar}>
-                <img src="https://4lapki.com/wp-content/uploads/2019/03/http-vestikavkaza-ru-upload-2019-01-02-154644941.jpeg" alt="avatar"/>
+
+        <div>
+            <div className={s.friends}>
+                <h2>Friends</h2>
+                <div className={s.friendsElements}>
+                    {friendsElements}
+                </div>
             </div>
-            <div className={s.bestFriend}>
-                <div>{props.name}</div>
-            </div>
+
         </div>
     )
 }

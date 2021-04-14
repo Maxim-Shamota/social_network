@@ -5,7 +5,7 @@ const ProfileInfo = () => {
     return (
         <div>
             <div>
-                <img src="https://littletravel.ru/wp-content/uploads/2020/05/azoren_254083921_1920x1280.jpg" alt="image"/>
+                <img src="https://klopik.com/uploads/posts/2014-01/1390504695_all-sizes-baby-raccoon-flickr-photo-sharing-1.png" alt="image"/>
             </div>
             <div className={s.descriptionBlock}>
                 ava + descr
