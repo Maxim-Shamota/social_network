@@ -1,40 +1,56 @@
-const ADD_POST = 'ADD-POST';
-const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
+const FOLLOW = 'FOLLOW';
+const UNFOLLOW = 'UNFOLLOW';
+const SET_USERS = 'SET_USERS';
+const SET_CURRENT_PAGE = 'SET_CURRENT_PAGE';
+const SET_TOTAL_USERS_COUNT = 'SET_TOTAL_USERS_COUNT';
 
 let initialState = {
-    posts: [
-        {id: 1, message: 'Hi, how do you do?', likeCount: 2},
-        {id: 2, message: 'I have a nice day', likeCount: 12}
-    ],
-    newPostText: ''
+    users: [],
+    pageSize: 5,
+    totalUsersCount: 0,
+    currentPage: 1
 }
 
-const profileReducer = (state= initialState, action) => {
+const usersReducer = (state= initialState, action) => {
 
     switch (action.type) {
-        case ADD_POST:
-            let newPost = {
-                id: 3,
-                message: state.newPostText,
-                likeCount: 0
-            };
+        case FOLLOW:
             return  {
                 ...state,
-                posts: [...state.posts, newPost],
-                newPostText: ''
+                users: state.users.map(u => {
+                    if (u.id === action.userID) {
+                        return {...u, followed: true}
+                    }
+                    return u;
+                })
             }
-        case UPDATE_NEW_POST_TEXT:
+        case UNFOLLOW:
             return  {
                 ...state,
-                newPostText: action.newText
+                users: state.users.map(u => {
+                    if (u.id === action.userID) {
+                        return {...u, followed: false}
+                    }
+                    return u;
+                })
             }
+        case SET_USERS:
+            return {...state, users: action.users}
+        case SET_CURRENT_PAGE:
+            return {...state, currentPage: action.currentPage}
+        case SET_TOTAL_USERS_COUNT:
+            return {...state, totalUsersCount: action.count}
+
         default:
             return state;
     }
 
 }
 
-export const addPostActionCreator = () => ({ type: ADD_POST })
-export const updateNewPostTextActionCreator = (text) => ({ type: UPDATE_NEW_POST_TEXT, newText: text })
+export const followAC = (userID) => ({ type: FOLLOW, userID })
+export const unfollowAC = (userID) => ({ type: UNFOLLOW, userID })
+export const setUserAC = (users) => ({ type: SET_USERS, users })
+export const setCurrentPageAC = (currentPage) => ({ type: SET_CURRENT_PAGE, currentPage })
+export const setTotalUsersCountAC = (totalUsersCount) => ({ type: SET_TOTAL_USERS_COUNT, count: totalUsersCount })
 
-export default profileReducer;
+export default usersReducer;

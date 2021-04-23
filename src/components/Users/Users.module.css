@@ -1,1 +1,20 @@
-
+.main {
+    padding: 20px;
+}
+.avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+}
+.userCard {
+    padding: 20px;
+}
+.selectPage {
+    cursor: pointer;
+    padding-right: 10px;
+}
+.selectedPage {
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 10px;
+}
