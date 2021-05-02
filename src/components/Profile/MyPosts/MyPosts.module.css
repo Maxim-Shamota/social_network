@@ -1,6 +1,9 @@
 .myPostsBlock {
     padding: 10px;
 }
+.myPostsBlock textarea {
+    resize: none;
+}
 
 .posts {
     margin-top: 10px;
