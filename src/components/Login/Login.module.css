@@ -2,5 +2,6 @@
     padding: 30px;
 }
 .formLogin input {
+    outline: none;
     margin-bottom: 15px;
 }
