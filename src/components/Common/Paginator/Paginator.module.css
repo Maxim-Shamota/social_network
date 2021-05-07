@@ -1,0 +1,12 @@
+.main {
+    padding: 20px;
+}
+.selectPage {
+    cursor: pointer;
+    padding-right: 10px;
+}
+.selectedPage {
+    font-weight: bold;
+    cursor: pointer;
+    padding-right: 10px;
+}

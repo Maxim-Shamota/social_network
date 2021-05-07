@@ -10,3 +10,9 @@
     padding: 10px;
     color: red;
 }
+.rememberMe {
+    display: inline-block;
+}
+.button {
+    margin-top: 20px;
+}
