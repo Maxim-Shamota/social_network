@@ -10,3 +10,7 @@
     cursor: pointer;
     padding-right: 10px;
 }
+.paginator {
+    display: flex;
+    justify-content: center;
+}
