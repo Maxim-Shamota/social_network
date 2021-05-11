@@ -1,13 +1,14 @@
 import React from 'react';
 import s from './Header.module.css';
 import {NavLink} from 'react-router-dom';
-import avatar from './../../assets/images/avatar.jpg'
+import avatar from './../../assets/images/avatar.jpg';
+import logo from './../../assets/images/logo.png';
 
 const Header = (props) => {
 
     return (
         <header className={s.header}>
-            <img src="https://bumper-stickers.ru/62203-thickbox_default/enot.jpg" alt="logo"/>
+            <img src={logo} alt="logo"/>
 
             <div className={s.loginBlock}>
                 <div className={s.avatar}>
