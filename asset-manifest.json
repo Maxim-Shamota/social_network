@@ -1,0 +1,30 @@
+{
+  "files": {
+    "main.css": "/Maxim-Shamota/social_network.git/static/css/main.cf146266.chunk.css",
+    "main.js": "/Maxim-Shamota/social_network.git/static/js/main.477b974a.chunk.js",
+    "main.js.map": "/Maxim-Shamota/social_network.git/static/js/main.477b974a.chunk.js.map",
+    "runtime-main.js": "/Maxim-Shamota/social_network.git/static/js/runtime-main.dd77dc99.js",
+    "runtime-main.js.map": "/Maxim-Shamota/social_network.git/static/js/runtime-main.dd77dc99.js.map",
+    "static/js/2.2e561523.chunk.js": "/Maxim-Shamota/social_network.git/static/js/2.2e561523.chunk.js",
+    "static/js/2.2e561523.chunk.js.map": "/Maxim-Shamota/social_network.git/static/js/2.2e561523.chunk.js.map",
+    "static/css/3.6c1031ef.chunk.css": "/Maxim-Shamota/social_network.git/static/css/3.6c1031ef.chunk.css",
+    "static/js/3.de020042.chunk.js": "/Maxim-Shamota/social_network.git/static/js/3.de020042.chunk.js",
+    "static/js/3.de020042.chunk.js.map": "/Maxim-Shamota/social_network.git/static/js/3.de020042.chunk.js.map",
+    "static/css/4.23fcc85c.chunk.css": "/Maxim-Shamota/social_network.git/static/css/4.23fcc85c.chunk.css",
+    "static/js/4.0dfc87d7.chunk.js": "/Maxim-Shamota/social_network.git/static/js/4.0dfc87d7.chunk.js",
+    "static/js/4.0dfc87d7.chunk.js.map": "/Maxim-Shamota/social_network.git/static/js/4.0dfc87d7.chunk.js.map",
+    "index.html": "/Maxim-Shamota/social_network.git/index.html",
+    "static/css/3.6c1031ef.chunk.css.map": "/Maxim-Shamota/social_network.git/static/css/3.6c1031ef.chunk.css.map",
+    "static/css/4.23fcc85c.chunk.css.map": "/Maxim-Shamota/social_network.git/static/css/4.23fcc85c.chunk.css.map",
+    "static/css/main.cf146266.chunk.css.map": "/Maxim-Shamota/social_network.git/static/css/main.cf146266.chunk.css.map",
+    "static/js/2.2e561523.chunk.js.LICENSE.txt": "/Maxim-Shamota/social_network.git/static/js/2.2e561523.chunk.js.LICENSE.txt",
+    "static/media/avatar.3f83b5df.jpg": "/Maxim-Shamota/social_network.git/static/media/avatar.3f83b5df.jpg",
+    "static/media/funnel.5918528e.svg": "/Maxim-Shamota/social_network.git/static/media/funnel.5918528e.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.dd77dc99.js",
+    "static/js/2.2e561523.chunk.js",
+    "static/css/main.cf146266.chunk.css",
+    "static/js/main.477b974a.chunk.js"
+  ]
+}
