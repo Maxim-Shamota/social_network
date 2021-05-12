@@ -1,6 +1,6 @@
 import React from 'react';
-import { connect } from "react-redux";
-import { Route, withRouter } from "react-router-dom";
+import { connect, Provider } from "react-redux";
+import { HashRouter, Route, withRouter } from "react-router-dom";
 import { compose } from 'redux';
 import './App.css';
 import HeaderContainer from "./components/Header/HeaderContainer";
@@ -12,6 +12,7 @@ import Settings from "./components/Settings/Settings";
 import UsersContainer from "./components/Users/UsersContainer";
 import { initializeApp } from "./redux/appReducer";
 import { withSuspense } from "./hoc/withSuspense";
+import store from "./redux/reduxStore";
 
 const DialogsContainer = React.lazy(() => import('./components/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('./components/Profile/ProfileContainer'));
@@ -29,8 +30,8 @@ class App extends React.Component {
 
         return (
             <div className='app-wrapper'>
-                <HeaderContainer store={this.props.store} />
-                <Navbar store={this.props.store} />
+                <HeaderContainer />
+                <Navbar />
                 <div className='app-wrapper-content'>
                     <Route path='/profile/:userId?'
                         render={withSuspense(ProfileContainer)} />
@@ -52,6 +53,16 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
-export default compose(
+let AppContainer = compose(
     withRouter,
-    connect(null, { initializeApp }))(App);
+    connect(mapStateToProps, {initializeApp}))(App);
+
+const SamuraiJSApp = (props) => {
+   return <HashRouter >
+        <Provider store={store}>
+            <AppContainer />
+        </Provider>
+    </HashRouter>
+}
+
+export default SamuraiJSApp;

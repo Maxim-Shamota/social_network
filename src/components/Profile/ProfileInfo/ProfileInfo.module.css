@@ -1,8 +1,19 @@
 .descriptionBlock {
     padding: 10px;
 }
-.descriptionBlock img {
+.mainPhoto {
+    max-width: 100%;
+
+}
+.mainAvatarWrapper {
     max-width: 200px;
+}
+.mainAvatar {
+    width: 100%;
+    padding-bottom: 10px;
+}
+.status {
+    padding-top: 25px;
 }
 .status input{
     outline: none;

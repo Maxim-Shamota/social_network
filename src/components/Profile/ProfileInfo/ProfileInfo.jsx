@@ -2,23 +2,33 @@ import React from 'react';
 import s from './ProfileInfo.module.css';
 import Preloader from "../../Common/Preloader/Preloader";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
-import usersAvatar from "../../../assets/images/avatar.jpg";
+import usersAvatar from "../../../assets/images/tenor.gif";
+import mainPhoto from "./../../../assets/images/enotic.png"
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({ profile, status, updateStatus, isOwner, savePhoto }) => {
+    if (!profile) {
         return <Preloader />
+    }
+
+    const onMainPhotoSelected = (e) => {
+        if (e.target.files.length) {
+            savePhoto(e.target.files[0]);
+        }
     }
 
     return (
         <div>
             <div>
-                <img src="https://klopik.com/uploads/posts/2014-01/1390504695_all-sizes-baby-raccoon-flickr-photo-sharing-1.png" alt="image"/>
+                <img src={mainPhoto} alt="image" />
             </div>
             <div className={s.descriptionBlock}>
-                <img src={props.profile.photos.large || usersAvatar} />
-                <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
-                <p>My ID - {props.profile.userId}</p>
-                <p>My name - {props.profile.fullName}</p>
+                <div className={s.mainAvatarWrapper}>
+                    <img src={profile.photos.large || usersAvatar} className={s.mainAvatar} />
+                </div>
+                {isOwner && <input type={"file"} onChange={onMainPhotoSelected} />}
+                <ProfileStatusWithHooks status={status} updateStatus={updateStatus} className={s.status}/>
+                <p>My ID - {profile.userId}</p>
+                <p>My name - {profile.fullName}</p>
             </div>
         </div>
     )

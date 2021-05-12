@@ -15,7 +15,8 @@ let initialState = {
     totalItemsCount: 0,
     currentPage: 1,
     isFetching: true,
-    followingInProgress: []
+    followingInProgress: [],
+    fake: 10
 }
 
 const usersReducer = (state = initialState, action) => {
@@ -65,12 +66,12 @@ export const toggleFollowingProgress = (isFetching, userID) => ({
     userID
 })
 
-export const getUsersThunkCreator = (currentPage, pageSize) => {
+export const requestUsers = (page, pageSize) => {
     return async (dispatch) => {
-        dispatch(setCurrentPage(currentPage));
-        dispatch(toggleIsFetching(true))
+        dispatch(toggleIsFetching(true));
+        dispatch(setCurrentPage(page));
 
-        let data = await usersAPI.getUsers(currentPage, pageSize)
+        let data = await usersAPI.getUsers(page, pageSize)
         dispatch(toggleIsFetching(false))
         dispatch(setUsers(data.items))
         dispatch(setTotalItemsCount(data.totalCount))

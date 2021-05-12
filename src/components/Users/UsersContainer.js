@@ -5,7 +5,7 @@ import {
     setCurrentPage,
     toggleFollowingProgress,
     unfollow,
-    getUsersThunkCreator
+    requestUsers
 } from "../../redux/usersReducer";
 import Users from "./Users";
 import Preloader from "../Common/Preloader/Preloader";
@@ -17,11 +17,13 @@ import {getUsers, getPageSize, getTotalItemsCount,
 class UsersContainer extends React.Component {
 
     componentDidMount() {
-        this.props.getUsersThunkCreator(this.props.currentPage, this.props.pageSize)
+        const {currentPage, pageSize} = this.props;
+        this.props.getUsers(currentPage, pageSize);
     }
 
     onPageChanged = (pageNumber) => {
-        this.props.getUsersThunkCreator(pageNumber, this.props.pageSize)
+        const {pageSize} = this.props;
+        this.props.getUsers(pageNumber, pageSize);
     }
 
     render() {
@@ -52,6 +54,5 @@ let mapStateToProps = (state) => {
 }
 
 export default compose(
-    connect(mapStateToProps,{follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsersThunkCreator}),
-    withAuthRedirect
+    connect(mapStateToProps, {follow, unfollow, setCurrentPage, toggleFollowingProgress, getUsers: requestUsers})
 )(UsersContainer)
