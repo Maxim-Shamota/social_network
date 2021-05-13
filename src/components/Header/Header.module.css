@@ -2,16 +2,19 @@
     grid-area: h;
     background: rgb(47, 109, 255);
 }
-.header>img {
+.logo{
     width: 50px;
-    padding: 0 0 0 20px;
+    padding: 5px 0 0 20px;
 }
 .loginBlock {
     display: flex;
     float: right;
-    padding: 20px;
+    padding: 15px 20px 0 20px;
 }
-.avatar img{
+.loginName {
+    padding-top: 5px;
+}
+.avatar {
     width: 30px;
     height: 30px;
     border-radius: 50%;

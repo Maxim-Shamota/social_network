@@ -1,3 +1,4 @@
+import { stopSubmit } from "redux-form";
 import { profileAPI, usersAPI } from "../api/api";
 
 const ADD_POST = 'ADD-POST';
@@ -60,6 +61,7 @@ export const getUserProfile = (userID) => async (dispatch) => {
     const response = await usersAPI.getProfile(userID)
     dispatch(setUserProfile(response.data))
 }
+
 export const getStatus = (userID) => async (dispatch) => {
     const response = await profileAPI.getStatus(userID)
     dispatch(setStatus(response.data))
@@ -76,6 +78,17 @@ export const savePhoto = (file) => async (dispatch) => {
 
     if (response.data.resultCode === 0) {
         dispatch(savePhotoSuccess(response.data.data.photos));
+    }
+}
+export const saveProfile = (profile) => async (dispatch, getState) => {
+    const userID = getState().auth.userID
+    const response = await profileAPI.saveProfile(profile);
+
+    if (response.data.resultCode === 0) {
+        dispatch(getUserProfile(userID));
+    } else {
+        dispatch(stopSubmit("editProfile", { _error: response.data.messages[0] }));
+        return Promise.reject( response.data.messages[0] )
     }
 }
 
