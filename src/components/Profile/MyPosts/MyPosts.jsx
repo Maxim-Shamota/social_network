@@ -24,14 +24,14 @@ const MyPosts = React.memo((props) => {
     )
 })
 
-let maxLength10 = maxLengthCreator(10)
+let maxLength100 = maxLengthCreator(100)
 
 let AddNewPostForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit}>
             <div>
-                <Field component={Textarea} name='newPostText' validate={[required, maxLength10]}
-                placeholder='Post message'
+                <Field component={Textarea} name='newPostText' validate={[required, maxLength100]}
+                placeholder='Post messages'
                 />
             </div>
             <div>
